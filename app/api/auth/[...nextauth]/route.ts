@@ -29,22 +29,22 @@ const authOptions = {
     callbacks: {
         async jwt(params: {
             token: JWT;
-            account: User | AdapterUser;
-            profile?: Profile | undefined;
+            account: User | AdapterUser | any;
+            profile?: Profile | any;
         }) {
             if (params.account) {
-                params.token.accessToken = params.account.access_token;
-                params.token.id = params.profile.id;
+                params.token.accessToken = params.account?.access_token;
+                params.token.id = params?.profile?.id;
             }
             return params.token;
         },
         async session(params: {
-            session: Session;
+            session: Session | any;
             token: JWT;
             user: AdapterUser;
         }) {
-            params.session.accessToken = params.token.accessToken;
-            params.session.user.id = params.token.id;
+            params.session.accessToken = params.token?.accessToken;
+            params.session.user.id = params.token?.id;
             return params.session;
         },
     },

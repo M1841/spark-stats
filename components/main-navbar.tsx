@@ -37,9 +37,9 @@ export default function MainNavbar() {
                     <Link href='https://github.com/m1841/sparkstats'>
                         <Badge
                             variant='default'
-                            className='text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10 hover:bg-emerald-400/25 dark:hover:bg-emerald-400/25 pl-[-6px] px-2 py-1'
+                            className='text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10 hover:bg-emerald-400/25 dark:hover:bg-emerald-400/25 pl-[0.35rem] pr-2 py-1'
                         >
-                            v0.2.0
+                            v0.2.1
                         </Badge>
                     </Link>
                 </NavigationMenuItem>
