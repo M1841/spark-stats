@@ -1,4 +1,4 @@
-# Spark Stats - version 0.2.1
+# Spark Stats - version 0.3.0
 
 ## Description
 
