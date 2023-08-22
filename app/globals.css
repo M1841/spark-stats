@@ -83,6 +83,21 @@
     }
     ::-moz-selection,
     ::selection {
-        background: #34d39950;
+        background: #fbbf2450;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-height {
+        height: calc(100vh - 3.25rem - 2px);
+    }
+    .section-height {
+        height: calc(100vh - 3.25rem - 1.5rem - 2px);
+    }
+    .recently-played-height {
+        height: calc(
+            100vh - 3.25rem - 1.5rem - 1.25rem - 0.5rem - 3rem - 2 * 0.5rem -
+                1.5rem - 2px
+        );
     }
 }

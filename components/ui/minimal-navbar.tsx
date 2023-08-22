@@ -16,7 +16,7 @@ import { ThemeToggle } from "@/components/theme/toggle";
 
 export default function MinimalNavbar() {
     return (
-        <NavigationMenu className='fixed w-full left-0 top-0 flex justify-center border-b border-neutral-500/25 bg-neutral-100/75 px-6 py-2 backdrop-blur-md dark:bg-neutral-900/75 sm:px-16 lg:px-24 2xl:px-36'>
+        <NavigationMenu className='fixed w-full left-0 top-0 flex justify-center border-b border-neutral-500/25 bg-neutral-100/75 px-6 py-2 backdrop-blur-sm dark:bg-neutral-900/75 sm:px-16 lg:px-24 2xl:px-36'>
             <NavigationMenuList className='w-full flex justify-between'>
                 <NavigationMenuItem className='flex gap-2'>
                     <NavigationMenuLink
@@ -38,9 +38,9 @@ export default function MinimalNavbar() {
                     >
                         <Badge
                             variant='default'
-                            className='text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10 hover:bg-emerald-400/25 dark:hover:bg-emerald-400/25 pl-[0.35rem] pr-2 py-1 font-normal'
+                            className='text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25  sm:dark:hover:bg-emerald-400/25 pl-[0.35rem] pr-2 py-1 font-medium'
                         >
-                            v0.2.1
+                            v0.3.1
                         </Badge>
                     </Link>
                 </NavigationMenuItem>

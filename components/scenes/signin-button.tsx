@@ -17,7 +17,7 @@ export default function SignIn() {
     return (
         <Button
             onClick={handleSignIn}
-            className='gap-2 text-neutral-50 bg-neutral-900 dark:bg-[#0e0e0e] border-[1px] w-full border-transparent dark:border-neutral-500/25 dark:hover:bg-neutral-900'
+            className='gap-2 text-neutral-50 bg-neutral-900 dark:bg-[#0e0e0e] border-[1px] w-full border-transparent dark:border-neutral-500/25 sm:dark:hover:bg-neutral-900'
             variant={theme === "dark" ? "outline" : "default"}
             disabled={loading}
         >
