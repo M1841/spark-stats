@@ -71,7 +71,7 @@ export default function Track(props: {
                 {image !== "" ? (
                     <Link href={track?.external_urls.spotify}>
                         <Image
-                            className='rounded-sm w-12 flex-none'
+                            className='rounded-sm w-12 h-12 flex-none fit-cover'
                             src={image}
                             width={80}
                             height={80}

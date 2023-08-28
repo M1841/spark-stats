@@ -1,4 +1,4 @@
-# Spark Stats - version 0.3.1
+# Spark Stats - version 0.4.1
 
 ## Description
 
@@ -59,6 +59,14 @@ Spark Stats is project that's been on my mind for a while. I've kept postponing 
     ```
 
 ## Change Log
+
+### v0.4.1
+
+Type: Patch
+
+Released: 2023-08-28
+
+-   Fixed some styling issues on the `/stats/[timeRange]` page
 
 ### v0.4.0
 

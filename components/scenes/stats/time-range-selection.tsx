@@ -17,8 +17,8 @@ export default function TimeRangeSelection(props: { range: 'short_term' | 'mediu
             name: 'All Time'
         },
     ]
-    const selectedClass = 'text-start w-1/3 p-2 rounded-md text-sm text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25 sm:dark:hover:bg-emerald-400/25 border-[1px] border-transparent';
-    const unselectedClass = 'text-start w-1/3 p-2 rounded-md text-sm cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75';
+    const selectedClass = 'text-center w-1/3 p-2 rounded-md text-sm text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25 sm:dark:hover:bg-emerald-400/25 border-[1px] border-transparent';
+    const unselectedClass = 'text-center w-1/3 p-2 rounded-md text-sm cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75';
     return (
         <section className='flex flex-col justify-center flex-none'>
             <header className='p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400'>

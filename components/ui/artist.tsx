@@ -39,7 +39,7 @@ export default function Artist(props: {
             <div className='flex justify-start items-center gap-2'>
                 <Link href={artist?.external_urls.spotify}>
                     <Image
-                        className='rounded-sm w-12 h-12 flex-none'
+                        className='rounded-sm w-12 h-12 flex-none fit-cover'
                         src={image}
                         width={80}
                         height={80}

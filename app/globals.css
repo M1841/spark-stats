@@ -73,7 +73,7 @@
         margin: 0;
         transition-property: color, background, background-color, border-color,
             text-decoration;
-        transition-duration: 200ms;
+        transition-duration: 300ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
     body {
@@ -86,7 +86,7 @@
     ::selection {
         background: #fbbf2450;
     }
-    img {
+    .fit-cover {
         object-fit: cover;
     }
 }

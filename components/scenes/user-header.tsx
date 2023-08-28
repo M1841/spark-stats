@@ -24,7 +24,7 @@ export default async function UserHeader(props: { spotifyApi: SpotifyWebApi }) {
             <section className='rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2 sm:hover:bg-neutral-100/75  sm:dark:hover:bg-neutral-900/75'>
                 <div className='flex justify-start items-center gap-2'>
                     <Image
-                        className='rounded-md h-12 w-12'
+                        className='rounded-md h-12 w-12 fit-cover'
                         src={images ? images[0].url : ""}
                         height={20}
                         width={20}
