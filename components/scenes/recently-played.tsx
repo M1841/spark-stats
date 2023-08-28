@@ -1,14 +1,14 @@
 import React from "react";
 import SpotifyWebApi from "spotify-web-api-node";
 import { History } from "lucide-react";
-import Track from "./track";
+import Track from "../ui/track";
 import { ScrollArea } from "@/components/shadcn/scroll-area";
 
 export default async function RecentlyPlayed(props: {
     spotifyApi: SpotifyWebApi;
 }) {
     const { spotifyApi } = props;
-    const { body } = await spotifyApi.getMyRecentlyPlayedTracks();
+    const { body } = await spotifyApi.getMyRecentlyPlayedTracks({ limit: 50 });
     const { items } = body;
     if (items) {
         return (
@@ -32,7 +32,7 @@ export default async function RecentlyPlayed(props: {
                                     key={item.played_at}
                                     track={item.track}
                                 />
-                                <div className='h-2'></div>
+                                <div key={item.played_at} className='h-2'></div>
                             </>
                         );
                     })}

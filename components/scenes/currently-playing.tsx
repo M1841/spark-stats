@@ -1,6 +1,6 @@
 import SpotifyWebApi from "spotify-web-api-node";
 import { BarChart2 } from "lucide-react";
-import Track from "./track";
+import Track from "../ui/track";
 import { Music } from "lucide-react";
 
 export default async function CurrentlyPlaying(props: {

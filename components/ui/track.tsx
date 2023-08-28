@@ -31,14 +31,15 @@ const displayArtistsOrShow = (
                         className='hover:underline'
                         href={artist.external_urls.spotify || ""}
                         target='_blank'
+                        key={artist.id}
                     >
                         {artist.name}
                     </Link>
                     {index < artistCount - 1
                         ? ", "
                         : index < artistCount
-                        ? " & "
-                        : ""}
+                            ? " & "
+                            : ""}
                 </>
             );
         });
@@ -62,10 +63,10 @@ export default function Track(props: {
                 ? track.album.images[2].url
                 : ""
             : track?.images[2]
-            ? track.images[2].url
-            : "";
+                ? track.images[2].url
+                : "";
     return (
-        <section className='rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2 hover:bg-neutral-100/75 dark:hover:bg-neutral-900/75'>
+        <section className='rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75'>
             <div className='flex justify-start items-center gap-2'>
                 {image !== "" ? (
                     <Link href={track?.external_urls.spotify}>
@@ -75,6 +76,7 @@ export default function Track(props: {
                             width={80}
                             height={80}
                             alt=''
+                            loading="lazy"
                         />
                     </Link>
                 ) : (

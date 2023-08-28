@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Spark Stats",
-    description: "The Ultimate Spotify Companion",
+    description: "The Ultimate Spotify Companion - Unlock the full potential of your music library",
 };
 
 export default async function RootLayout({
