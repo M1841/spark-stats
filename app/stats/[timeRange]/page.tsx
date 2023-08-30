@@ -25,13 +25,13 @@ export default async function Stats({ params }: { params: { timeRange: "short_te
             const artistData = await spotifyApi.getMyTopArtists({ time_range: timeRange, limit: 50 });
             const artists = artistData.body.items;
             return (
-                <main className='w-full mt-[3.25rem] pt-6 px-[0.9rem] sm:px-[3.4rem] lg:px-[5.4rem] 2xl:px-[8.4rem] flex flex-col gap-6 main-height'>
+                <main className='w-full mt-[3.25rem] pt-6 px-[0.9rem] md:px-[3.4rem] xl:px-[5.4rem] flex flex-col gap-6 main-height'>
                     <TimeRangeSelection range={timeRange} />
-                    <div className=" flex flex-col lg:flex-row gap-6 ">
+                    <div className=" flex flex-col lg:flex-row gap-6">
                         <section className='flex w-full justify-start flex-col gap-6 top-tracks-height'>
                             <TopTracks tracks={tracks} />
                         </section>
-                        <aside className='flex flex-col justify-start w-full lg:w-1/2 lg:min-w-[50%] gap-6 section-height'>
+                        <aside className='flex flex-col justify-start w-full gap-6 section-height'>
                             <TopArtists artists={artists} />
                         </aside>
 

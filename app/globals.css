@@ -71,10 +71,12 @@
         @apply border-border;
         padding: 0;
         margin: 0;
-        transition-property: color, background, background-color, border-color,
-            text-decoration;
+        transition-property: color, background, background-color, border-color;
         transition-duration: 300ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    *:focus-visible {
+        outline: none;
     }
     body {
         @apply bg-background text-foreground;
@@ -84,7 +86,7 @@
     }
     ::-moz-selection,
     ::selection {
-        background: #fbbf2450;
+        background: #34d39950;
     }
     .fit-cover {
         object-fit: cover;

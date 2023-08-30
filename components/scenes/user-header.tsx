@@ -15,7 +15,7 @@ export default async function UserHeader(props: { spotifyApi: SpotifyWebApi }) {
                     <span className='text-neutral-600 dark:text-neutral-400'>
                         <User2
                             size={16}
-                            strokeWidth={2.3}
+                            strokeWidth={2}
                         />
                     </span>
                     Your Profile

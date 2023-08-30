@@ -1,4 +1,4 @@
-# Spark Stats - version 0.4.1
+# Spark Stats - version 0.4.2
 
 ## Description
 
@@ -59,6 +59,15 @@ Spark Stats is project that's been on my mind for a while. I've kept postponing 
     ```
 
 ## Change Log
+
+### v0.4.2
+
+Type: Patch
+
+Released: 2023-08-31
+
+-   Replaced the `Open in new page` button on the track cards with a dropdown menu that allows the user to open the track, artist or album in a new page
+-   Did some minor styling tweaks
 
 ### v0.4.1
 

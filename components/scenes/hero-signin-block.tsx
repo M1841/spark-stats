@@ -10,7 +10,7 @@ import {
 
 export default function HeroSigninBlock() {
     return (
-        <main className='p-6 mt-8 flex flex-col xl:flex-row-reverse justify-center items-center gap-4 xl:gap-0 xl:justify-between xl:mt-24 xl:px-24 2xl:px-36'>
+        <main className='p-6 mt-8 flex flex-col xl:flex-row-reverse justify-center items-center gap-4 xl:gap-0 xl:justify-between xl:mt-24 md:px-16 xl:px-24'>
             <TooltipProvider>
                 <Tooltip>
                     <TooltipTrigger asChild>

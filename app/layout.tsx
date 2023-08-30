@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import MinimalNavbar from "@/components/ui/minimal-navbar";
+import NavigationBar from "@/components/ui/navigation-bar";
 import { ThemeProvider } from "@/components/theme/provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -25,7 +25,7 @@ export default async function RootLayout({
                     defaultTheme='system'
                     enableSystem
                 >
-                    <MinimalNavbar />
+                    <NavigationBar />
                     {children}
                 </ThemeProvider>
             </body>
