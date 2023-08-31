@@ -2,6 +2,7 @@ import SpotifyWebApi from "spotify-web-api-node";
 import { BarChart2 } from "lucide-react";
 import Track from "../ui/track";
 import { Music } from "lucide-react";
+import LoadingCard from "../ui/loading-card";
 
 export default async function CurrentlyPlaying(props: {
     spotifyApi: SpotifyWebApi;
@@ -39,4 +40,23 @@ export default async function CurrentlyPlaying(props: {
             )}
         </section>
     );
+}
+
+export function LoadingCurrentlyPlaying() {
+    return (
+        <section className='flex flex-col justify-center flex-none'>
+            <header className='p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400'>
+                <h2 className='text-sm flex gap-1 items-center font-normal'>
+                    <span className='text-neutral-600 dark:text-neutral-400'>
+                        <BarChart2
+                            size={16}
+                            strokeWidth={2}
+                        />
+                    </span>
+                    Currently Playing
+                </h2>
+            </header>
+            <LoadingCard />
+        </section>
+    )
 }

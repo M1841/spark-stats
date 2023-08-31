@@ -1,4 +1,4 @@
-# Spark Stats - version 0.4.2
+# Spark Stats - version 0.5.0
 
 ## Description
 
@@ -59,6 +59,16 @@ Spark Stats is project that's been on my mind for a while. I've kept postponing 
     ```
 
 ## Change Log
+
+### v0.5.0
+
+Type: Minor
+
+Released: 2023-08-31
+
+-   Added loading UI for all the components that fetch data
+-   Separated the `Top Tracks` and `Top Artists` sections page into `/top-tracks/[timeRange]` and `/top-artists/[timeRange]` pages
+-   Did some minor styling tweaks
 
 ### v0.4.2
 

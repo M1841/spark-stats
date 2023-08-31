@@ -29,14 +29,16 @@ const displayGenres = (
     return result;
 }
 
-export default function Artist(props: {
+export default function IndexedArtist(props: {
     artist: SpotifyApi.ArtistObjectFull
+    index: number
 }) {
-    const { artist } = props;
-    const image = artist.images[2].url;
+    const { artist, index } = props;
+    const image = artist.images[2] ? artist.images[2].url : '';
     return (
         <section className='rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75'>
             <div className='flex justify-start items-center gap-2'>
+                <div className='text-center w-5 text-sm text-neutral-600 dark:text-neutral-400'>{index}</div>
                 <Link
                     className='rounded-sm w-12 h-12 flex-none bg-neutral-300/75 dark:bg-neutral-800/75'
                     href={artist?.external_urls.spotify}

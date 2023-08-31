@@ -3,6 +3,7 @@ import Link from "next/link";
 import SpotifyWebApi from "spotify-web-api-node";
 import { ExternalLink, User2 } from "lucide-react";
 import SignoutButton from "@/components/scenes/signout-button";
+import LoadingCard from "../ui/loading-card";
 
 export default async function UserHeader(props: { spotifyApi: SpotifyWebApi }) {
     const { spotifyApi } = props;
@@ -23,13 +24,19 @@ export default async function UserHeader(props: { spotifyApi: SpotifyWebApi }) {
             </header>
             <section className='rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2 sm:hover:bg-neutral-100/75  sm:dark:hover:bg-neutral-900/75'>
                 <div className='flex justify-start items-center gap-2'>
-                    <Image
-                        className='rounded-md h-12 w-12 fit-cover'
-                        src={images ? images[0].url : ""}
-                        height={20}
-                        width={20}
-                        alt=''
-                    />
+                    <Link
+                        href={external_urls.spotify}
+                        target='_blank'
+                    >
+                        <Image
+                            className='rounded-md h-12 w-12 fit-cover'
+                            src={images ? images[0].url : ""}
+                            height={20}
+                            width={20}
+                            alt=''
+                            loading='lazy'
+                        />
+                    </Link>
                     <div className='flex flex-1 flex-col gap-[0.1rem]'>
                         <Link
                             href={external_urls.spotify}
@@ -54,4 +61,23 @@ export default async function UserHeader(props: { spotifyApi: SpotifyWebApi }) {
             </section>
         </section>
     );
+}
+
+export function LoadingUserHeader() {
+    return (
+        <section className='flex flex-col justify-center flex-none'>
+            <header className='p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400'>
+                <h2 className='text-sm flex gap-1 items-center font-normal'>
+                    <span className='text-neutral-600 dark:text-neutral-400'>
+                        <User2
+                            size={16}
+                            strokeWidth={2}
+                        />
+                    </span>
+                    Your Profile
+                </h2>
+            </header>
+            <LoadingCard />
+        </section>
+    )
 }

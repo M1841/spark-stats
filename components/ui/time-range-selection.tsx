@@ -1,8 +1,14 @@
 import { CalendarDays } from "lucide-react"
 import Link from 'next/link'
 
-export default function TimeRangeSelection(props: { range: 'short_term' | 'medium_term' | 'long_term' | undefined }) {
+export default function TimeRangeSelection(
+    props: {
+        range: 'short_term' | 'medium_term' | 'long_term' | undefined,
+        page: 'tracks' | 'artists' | 'albums' | 'genres' | undefined
+    }
+) {
     const rangeCode = props.range;
+    const { page } = props;
     const ranges = [
         {
             code: 'short_term',
@@ -35,7 +41,7 @@ export default function TimeRangeSelection(props: { range: 'short_term' | 'mediu
             <div className="flex w-full gap-2 lg:gap-6">
                 {ranges.map((range) => {
                     const className = range.code === rangeCode ? selectedClass : unselectedClass;
-                    return <Link href={`/stats/${range.code}`} key={range.code} className={className}>{range.name}</Link>
+                    return <Link href={`/top-${page}/${range.code}`} key={range.code} className={className}>{range.name}</Link>
                 })}
             </div>
         </section>

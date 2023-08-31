@@ -26,8 +26,8 @@ export default function SignIn() {
             ) : (
                 <Image
                     src='/spotify.svg'
-                    width={20}
-                    height={20}
+                    width={21}
+                    height={21}
                     alt=''
                 />
             )}
