@@ -1,6 +1,16 @@
 "use client"
 
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger } from "@/components/shadcn/dropdown-menu"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdownMenuSubTrigger
+} from "@/components/shadcn/dropdown-menu"
 import { MoreVertical, Music2, Mic2, Disc3 } from "lucide-react"
 import Link from "next/link"
 
@@ -13,12 +23,12 @@ export default function TrackDropdown(props: {
 
             <DropdownMenuTrigger className='text-neutral-600 dark:text-neutral-400 p-3 rounded-full sm:hover:bg-neutral-200 sm:dark:hover:bg-neutral-800'>
                 <MoreVertical size={18} />
-                <span className="sr-only">Options</span>
+                <span className="sr-only">Spotify Links</span>
             </DropdownMenuTrigger>
 
             <DropdownMenuContent className='mr-[0.88rem] rounded-md text-sm bg-[#fdfdfd] dark:bg-[#0d0d0d] border-zinc-300 dark:border-zinc-800'>
 
-                <DropdownMenuLabel>Options</DropdownMenuLabel>
+                <DropdownMenuLabel>Spotify Links</DropdownMenuLabel>
                 <DropdownMenuSeparator className='bg-zinc-300 dark:bg-zinc-800' />
 
                 <Link href={track.external_urls.spotify} target="_blank">

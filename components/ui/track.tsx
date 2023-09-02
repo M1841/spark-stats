@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/image";
 import Link from "next/link";
 import { Music } from "lucide-react";
 import TrackDropdown from "./track-dropdown";
@@ -67,8 +67,6 @@ export default function Track(props: {
                                 width={80}
                                 height={80}
                                 alt=''
-                                loading='lazy'
-                                placeholder='empty'
                             />
                         </Link>
                     ) : (

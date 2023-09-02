@@ -7,8 +7,13 @@ import {
     NavigationMenuList,
 } from "@/components/shadcn/navigation-menu"
 import { ThemeToggle } from "@/components/theme/toggle";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { Session } from "next-auth";
+import SideMenu from "./side-menu";
 
-export default function NavigationBar() {
+export default async function NavigationBar() {
+    const session = (await getServerSession(authOptions)) as Session;
     return (
         <NavigationMenu className='fixed w-full left-0 top-0 flex justify-center border-b border-zinc-500/25 bg-zinc-100/75 px-6 py-2 backdrop-blur-sm dark:bg-neutral-900/75 md:px-16 xl:px-24'>
             <NavigationMenuList className='w-full flex justify-between items-center'>
@@ -31,12 +36,18 @@ export default function NavigationBar() {
                         target='_blank'
                         className='text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25  sm:dark:hover:bg-emerald-400/25 pl-[0.35rem] pr-2 py-1 font-medium text-xs inline-flex items-center rounded-full h-fit'
                     >
-                        v0.5.0
+                        v0.6.0
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <ThemeToggle />
-                </NavigationMenuItem>
+                {
+                    session?.user && session?.accessToken ? (
+                        <SideMenu />
+                    ) : (
+                        <NavigationMenuItem>
+                            <ThemeToggle />
+                        </NavigationMenuItem>
+                    )
+                }
             </NavigationMenuList>
         </NavigationMenu>
     );

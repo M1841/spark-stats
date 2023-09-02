@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/shadcn/button";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { signIn } from "next-auth/react";
+import SpotifyIcon from "@/components/ui/spotify-icon";
 
 export default function SignIn() {
     const { theme } = useTheme();
@@ -24,11 +24,9 @@ export default function SignIn() {
             {loading ? (
                 <Loader2 className='animate-spin' />
             ) : (
-                <Image
-                    src='/spotify.svg'
-                    width={21}
-                    height={21}
-                    alt=''
+                <SpotifyIcon
+                    color="#1DB954"
+                    size={21}
                 />
             )}
             Sign in with Spotify

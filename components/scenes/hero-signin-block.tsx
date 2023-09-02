@@ -28,7 +28,7 @@ export default function HeroSigninBlock() {
                             <Link
                                 href='https://storyset.com'
                                 target='_blank'
-                                className='underline sm:hover:text-neutral-600 sm:dark:hover:text-neutral-300'
+                                className='hover:underline'
                             >
                                 StorySet
                             </Link>
@@ -50,25 +50,6 @@ export default function HeroSigninBlock() {
                     </p>
                 </header>
                 <SignIn />
-                <p className='text-[0.75rem] md:text-[0.85rem] text-neutral-500 dark:text-neutral-500 text-center xl:text-start'>
-                    By signing in, you agree to the{" "}
-                    <Link
-                        className='underline sm:hover:text-neutral-700 dark:hover:text-neutral-400'
-                        href='/docs/terms-of-service'
-                        target='_blank'
-                    >
-                        Terms of Service
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                        className='underline sm:hover:text-neutral-700 sm:dark:hover:text-neutral-400'
-                        href='/docs/privacy-policy'
-                        target='_blank'
-                    >
-                        Privacy Policy
-                    </Link>
-                    .
-                </p>
             </section>
         </main>
     );

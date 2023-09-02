@@ -1,4 +1,4 @@
-# Spark Stats - version 0.5.0
+# Spark Stats - version 0.6.0
 
 ## Description
 
@@ -59,6 +59,17 @@ Spark Stats is project that's been on my mind for a while. I've kept postponing 
     ```
 
 ## Change Log
+
+### v0.6.0
+
+Type: Minor
+
+Released: 2023-09-02
+
+-   Added a side menu that allows the user to navigate between the different pages of the app
+-   Added a custom `Image` component that doesn't use the `next/image` component and allows for more customization without having to pay to use over 1000 images per month (the app renders up to 646 images per user)
+-   Added some error handling, more to come
+-   Did some minor styling tweaks
 
 ### v0.5.0
 

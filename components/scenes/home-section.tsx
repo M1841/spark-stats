@@ -17,7 +17,7 @@ export default async function HomeSection(props: {
                 </Suspense>
                 <FeaturesSection />
             </section>
-            <aside className='flex flex-col justify-start w-full xl:w-1/3 xl:min-w-[33.333333%] gap-6 home-section-height'>
+            <aside className='flex flex-col justify-start w-full lg:w-1/3 lg:min-w-[33.333333%] gap-6 home-section-height'>
                 <Suspense fallback={<LoadingCurrentlyPlaying />}>
                     <CurrentlyPlaying spotifyApi={spotifyApi} />
                 </Suspense>

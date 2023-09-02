@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 
@@ -48,8 +48,6 @@ export default function Artist(props: {
                         width={80}
                         height={80}
                         alt=''
-                        loading="lazy"
-                        placeholder='empty'
                     />
                 </Link>
                 <div className='flex flex-1 flex-col gap-[0.1rem]'>

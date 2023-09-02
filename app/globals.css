@@ -93,6 +93,10 @@
     }
 }
 
+.sheet-content-height {
+    height: calc(100vh - 3.5rem);
+}
+
 @media (min-width: 1024px) {
     .main-height {
         height: calc(100vh - 3.25rem - 2px);
