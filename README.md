@@ -1,4 +1,4 @@
-# Spark Stats - version 0.6.0
+# Spark Stats - version 0.6.1
 
 ## Description
 
@@ -59,6 +59,16 @@ Spark Stats is project that's been on my mind for a while. I've kept postponing 
     ```
 
 ## Change Log
+
+### v0.6.1
+
+Type: Minor
+
+Released: 2023-09-24
+
+-   Changed the time range selection mechanism from navigating between different pages to switching visibility using CSS only
+-   Refactored the `Track` and `Artist` components to remove the need for `IndexedTrack` and `IndexedArtist`
+-   Did some minor styling tweaks
 
 ### v0.6.0
 

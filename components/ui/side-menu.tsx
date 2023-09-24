@@ -41,13 +41,13 @@ export default function SideMenu(props: {
                 <SheetContent className='p-0 text-[0.93rem]  border-zinc-500/25 bg-[#fdfdfd] dark:bg-[#0d0d0d]'>
                     <div className='flex flex-col p-2 border-b border-zinc-500/25 gap-2'>
                         <Link
-                            href='/top-tracks/short_term'
+                            href='/top-tracks'
                             className='flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-pointer gap-2'
                         >
                             <Music2 size={16} />Top Tracks
                         </Link>
                         <Link
-                            href='/top-artists/short_term'
+                            href='/top-artists'
                             className='flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-pointer gap-2'
                         >
                             <Mic2 size={16} />Top Artists

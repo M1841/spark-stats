@@ -5,7 +5,7 @@ export default function FeaturesSection() {
     const features = [
         {
             key: 'top_tracks',
-            href: '/top-tracks/short_term',
+            href: '/top-tracks',
             icon: <Music2
                 className='rounded-sm text-emerald-500 dark:text-emerald-300 bg-emerald-400/10 dark:bg-emerald-400/10 p-3 flex-none w-12 h-12'
                 size={24}
@@ -14,7 +14,7 @@ export default function FeaturesSection() {
         },
         {
             key: 'top_artists',
-            href: '/top-artists/short_term',
+            href: '/top-artists',
             icon: <Mic2
                 className='rounded-sm text-emerald-500 dark:text-emerald-300 bg-emerald-400/10 dark:bg-emerald-400/10 p-3 flex-none w-12 h-12'
                 size={24}

@@ -1,20 +1,37 @@
 import { Music2 } from "lucide-react";
 import { ScrollArea } from "@/components/shadcn/scroll-area";
-import IndexedTrack from "@/components/scenes/top-tracks/indexed-track";
 import SpotifyWebApi from "spotify-web-api-node";
-import IndexedLoadingCard from "../../ui/indexed-loading-card";
+import Track from "@/components/ui/track";
+import LoadingCard from "@/components/ui/loading-card";
 
 export default async function TopTracks(props: {
     spotifyApi: SpotifyWebApi;
-    timeRange: "short_term" | "medium_term" | "long_term" | undefined
 }) {
     try {
-        const { spotifyApi, timeRange } = props;
-        const trackDataOne = await spotifyApi.getMyTopTracks({ time_range: timeRange, limit: 49 });
-        let trackDataTwo = await spotifyApi.getMyTopTracks({ time_range: timeRange, limit: 50, offset: 49 });
-        const tracks = [...trackDataOne.body.items, ...trackDataTwo.body.items];
+        const { spotifyApi } = props;
+        const tracks: {
+            shortTerm: SpotifyApi.TrackObjectFull[],
+            mediumTerm: SpotifyApi.TrackObjectFull[],
+            longTerm: SpotifyApi.TrackObjectFull[]
+        } = {
+            shortTerm: [],
+            mediumTerm: [],
+            longTerm: []
+        }
+        let trackDataOne = await spotifyApi.getMyTopTracks({ time_range: "short_term", limit: 49 });
+        let trackDataTwo = await spotifyApi.getMyTopTracks({ time_range: "short_term", limit: 50, offset: 49 });
+        tracks.shortTerm = [...trackDataOne.body.items, ...trackDataTwo.body.items];
+
+        trackDataOne = await spotifyApi.getMyTopTracks({ time_range: "medium_term", limit: 49 });
+        trackDataTwo = await spotifyApi.getMyTopTracks({ time_range: "medium_term", limit: 50, offset: 49 });
+        tracks.mediumTerm = [...trackDataOne.body.items, ...trackDataTwo.body.items];
+
+        trackDataOne = await spotifyApi.getMyTopTracks({ time_range: "long_term", limit: 49 });
+        trackDataTwo = await spotifyApi.getMyTopTracks({ time_range: "long_term", limit: 50, offset: 49 });
+        tracks.longTerm = [...trackDataOne.body.items, ...trackDataTwo.body.items];
+
         return (
-            <section className='flex flex-col top-tracks-height'>
+            <>
                 <header className='p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400'>
                     <h2 className='text-sm flex gap-1 items-center font-normal'>
                         <span className='text-neutral-600 dark:text-neutral-400'>
@@ -26,11 +43,11 @@ export default async function TopTracks(props: {
                         Top Tracks
                     </h2>
                 </header>
-                <ScrollArea className='flex flex-col gap-2 -mr-[0.786rem] pr-[0.786rem]'>
-                    {tracks.map((item, index) => {
+                <ScrollArea className='hidden flex-col gap-2 -mr-[0.786rem] pr-[0.786rem]' id='short-term-list'>
+                    {tracks.shortTerm.map((item, index) => {
                         return (
                             <>
-                                <IndexedTrack
+                                <Track
                                     key={item.id}
                                     track={item}
                                     index={index + 1}
@@ -40,7 +57,35 @@ export default async function TopTracks(props: {
                         );
                     })}
                 </ScrollArea>
-            </section>
+                <ScrollArea className='hidden flex-col gap-2 -mr-[0.786rem] pr-[0.786rem]' id='medium-term-list'>
+                    {tracks.mediumTerm.map((item, index) => {
+                        return (
+                            <>
+                                <Track
+                                    key={item.id}
+                                    track={item}
+                                    index={index + 1}
+                                />
+                                <div key={item.id} className='h-2'></div>
+                            </>
+                        );
+                    })}
+                </ScrollArea>
+                <ScrollArea className='hidden flex-col gap-2 -mr-[0.786rem] pr-[0.786rem]' id='long-term-list'>
+                    {tracks.longTerm.map((item, index) => {
+                        return (
+                            <>
+                                <Track
+                                    key={item.id}
+                                    track={item}
+                                    index={index + 1}
+                                />
+                                <div key={item.id} className='h-2'></div>
+                            </>
+                        );
+                    })}
+                </ScrollArea>
+            </>
         )
     } catch (err: unknown) {
         console.error(err);
@@ -49,10 +94,10 @@ export default async function TopTracks(props: {
 }
 
 export function LoadingTopTracks() {
-    let fiftyLoadingCards: JSX.Element[] = [];
-    for (let i = 1; i <= 99; i++) fiftyLoadingCards.push(<><IndexedLoadingCard index={i} /><div className='h-2'></div></>);
+    let skeletonCards: JSX.Element[] = [];
+    for (let i = 1; i <= 99; i++) skeletonCards.push(<><LoadingCard index={i} /><div className='h-2'></div></>);
     return (
-        <section className='flex flex-col top-tracks-height'>
+        <>
             <header className='p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400'>
                 <h2 className='text-sm flex gap-1 items-center font-normal'>
                     <span className='text-neutral-600 dark:text-neutral-400'>
@@ -65,8 +110,8 @@ export function LoadingTopTracks() {
                 </h2>
             </header>
             <ScrollArea className='flex flex-col gap-2 -mr-[0.786rem] pr-[0.786rem]'>
-                {fiftyLoadingCards}
+                {skeletonCards}
             </ScrollArea>
-        </section>
+        </>
     )
 }

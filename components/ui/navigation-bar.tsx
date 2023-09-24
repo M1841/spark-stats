@@ -36,7 +36,7 @@ export default async function NavigationBar() {
                         target='_blank'
                         className='text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25  sm:dark:hover:bg-emerald-400/25 pl-[0.35rem] pr-2 py-1 font-medium text-xs inline-flex items-center rounded-full h-fit'
                     >
-                        v0.6.0
+                        v0.6.1
                     </Link>
                 </NavigationMenuItem>
                 {

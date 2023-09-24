@@ -1,32 +1,30 @@
-import { CalendarDays } from "lucide-react"
-import Link from 'next/link'
+"use client";
 
-export default function TimeRangeSelection(
-    props: {
-        range: 'short_term' | 'medium_term' | 'long_term' | undefined,
-        page: 'tracks' | 'artists' | 'albums' | 'genres' | undefined
-    }
-) {
-    const rangeCode = props.range;
-    const { page } = props;
+import { CalendarDays } from "lucide-react"
+import { useRef, useEffect } from "react"
+
+export default function TimeRangeSelection() {
     const ranges = [
         {
-            code: 'short_term',
+            code: 'short',
             name: '4 Weeks'
         },
         {
-            code: 'medium_term',
+            code: 'medium',
             name: '6 Months'
         },
         {
-            code: 'long_term',
+            code: 'long',
             name: 'All Time'
         },
     ]
-    const selectedClass = 'text-center w-1/3 p-2 rounded-md text-sm text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25 sm:dark:hover:bg-emerald-400/25 border-[1px] border-transparent';
-    const unselectedClass = 'text-center w-1/3 p-2 rounded-md text-sm cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75';
+    const shortTermRadioRef = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+        if (shortTermRadioRef.current) shortTermRadioRef.current.click();
+    }, []);
+
     return (
-        <section className='flex flex-col justify-center flex-none'>
+        <>
             <header className='p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400'>
                 <h2 className='text-sm flex gap-1 items-center font-normal'>
                     <span className='text-neutral-600 dark:text-neutral-400'>
@@ -38,12 +36,56 @@ export default function TimeRangeSelection(
                     Time Range
                 </h2>
             </header>
-            <div className="flex w-full gap-2 lg:gap-6">
+
+            <input
+                className="hidden"
+                ref={shortTermRadioRef}
+                id={"short-select"}
+                type="radio"
+                name="time-range"
+                value={"short-term"}
+                defaultChecked
+            />
+            <input
+                className="hidden"
+                id={"medium-select"}
+                type="radio"
+                name="time-range"
+                value={"medium-term"}
+            />
+            <input
+                className="hidden"
+                id={"long-select"}
+                type="radio"
+                name="time-range"
+                value={"long-term"}
+            />
+
+            <form className="flex w-full gap-2 lg:gap-6 mb-6">
                 {ranges.map((range) => {
-                    const className = range.code === rangeCode ? selectedClass : unselectedClass;
-                    return <Link href={`/top-${page}/${range.code}`} key={range.code} className={className}>{range.name}</Link>
+                    // const isCheckedByDefault = range.code === "short";
+                    return (
+                        <>
+                            {/* <input
+                                className="hidden"
+                                id={range.code + "-select"}
+                                type="radio"
+                                name="time-range"
+                                value={range.code + "-term"}
+                                defaultChecked={isCheckedByDefault}
+                            /> */}
+                            <label
+                                id={range.code + "-select-label"}
+                                key={range.code}
+                                htmlFor={range.code + "-select"}
+                                className='text-center w-1/3 p-2 rounded-md text-sm cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75'
+                            >
+                                {range.name}
+                            </label>
+                        </>
+                    )
                 })}
-            </div>
-        </section>
+            </form>
+        </>
     )
 }

@@ -2,7 +2,6 @@ import Image from "@/components/ui/image";
 import Link from "next/link";
 import SpotifyWebApi from "spotify-web-api-node";
 import { ExternalLink, User2 } from "lucide-react";
-import SignoutButton from "@/components/scenes/signout-button";
 import LoadingCard from "../ui/loading-card";
 
 export default async function UserHeader(props: { spotifyApi: SpotifyWebApi }) {

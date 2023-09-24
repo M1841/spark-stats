@@ -26,7 +26,9 @@ export default async function RootLayout({
                     enableSystem
                 >
                     <NavigationBar />
-                    {children}
+                    <div className='mt-[3.25rem]'>
+                        {children}
+                    </div>
                 </ThemeProvider>
             </body>
         </html>

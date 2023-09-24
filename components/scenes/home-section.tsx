@@ -10,8 +10,8 @@ export default async function HomeSection(props: {
 }) {
     const { spotifyApi } = props;
     return (
-        <main className='w-full mt-[3.25rem] pt-6 px-[0.9rem] md:px-[3.4rem] xl:px-[5.4rem] flex flex-col lg:flex-row gap-6 main-height'>
-            <section className='flex w-full justify-start flex-col gap-6 section-height'>
+        <main className='w-full pt-6 px-[0.9rem] md:px-[3.4rem] xl:px-[5.4rem] flex flex-col lg:flex-row gap-6 main-height'>
+            <section className='flex w-full justify-start flex-col gap-6 home-section-height'>
                 <Suspense fallback={<LoadingUserHeader />}>
                     <UserHeader spotifyApi={spotifyApi} />
                 </Suspense>
