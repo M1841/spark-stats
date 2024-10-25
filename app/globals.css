@@ -3,129 +3,129 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
 
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
 
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
 
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
 
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
 
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
 
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
 
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
 
-        --radius: 0.5rem;
-    }
+    --radius: 0.5rem;
+  }
 
-    .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
 
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
 
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
 
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
 
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
-    }
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
 }
 
 @layer base {
-    * {
-        @apply border-border;
-        padding: 0;
-        margin: 0;
-        transition-property: color, background, background-color, border-color;
-        transition-duration: 300ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    *:focus-visible {
-        outline: none;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
-    nav > div {
-        width: 100%;
-    }
-    ::-moz-selection,
-    ::selection {
-        background: #34d39950;
-    }
-    .fit-cover {
-        object-fit: cover;
-    }
-    .selected-time-range {
-        @apply text-center w-1/3 p-2 rounded-md text-sm text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25 sm:dark:hover:bg-emerald-400/25 border-[1px] border-transparent;
-    }
-    #short-select:checked ~ form > #short-select-label {
-        @apply selected-time-range;
-    }
-    #short-select:checked ~ #short-term-list {
-        @apply flex;
-    }
-    #medium-select:checked ~ form > #medium-select-label {
-        @apply selected-time-range;
-    }
-    #medium-select:checked ~ #medium-term-list {
-        @apply flex;
-    }
-    #long-select:checked ~ form > #long-select-label {
-        @apply selected-time-range;
-    }
-    #long-select:checked ~ #long-term-list {
-        @apply flex;
-    }
+  * {
+    @apply border-border;
+    padding: 0;
+    margin: 0;
+    transition-property: color, background, background-color, border-color;
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  *:focus-visible {
+    outline: none;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  nav > div {
+    width: 100%;
+  }
+  ::-moz-selection,
+  ::selection {
+    background: #34d39950;
+  }
+  .fit-cover {
+    object-fit: cover;
+  }
+  .selected-time-range {
+    @apply text-center w-1/3 p-2 rounded-md text-sm text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25 sm:dark:hover:bg-emerald-400/25 border-[1px] border-transparent;
+  }
+  #short-select:checked ~ form > #short-select-label {
+    @apply selected-time-range;
+  }
+  #short-select:checked ~ #short_term_list {
+    @apply flex;
+  }
+  #medium-select:checked ~ form > #medium-select-label {
+    @apply selected-time-range;
+  }
+  #medium-select:checked ~ #medium_term_list {
+    @apply flex;
+  }
+  #long-select:checked ~ form > #long-select-label {
+    @apply selected-time-range;
+  }
+  #long-select:checked ~ #long_term_list {
+    @apply flex;
+  }
 }
 
 .sheet-content-height {
-    height: calc(100vh - 3.5rem);
+  height: calc(100vh - 3.5rem);
 }
 
 @media (min-width: 1024px) {
-    .main-height {
-        height: calc(100vh - 3.25rem - 2px);
-    }
-    .home-section-height {
-        height: calc(100vh - 3.25rem - 1.5rem - 2px);
-    }
-    .recently-played-height {
-        height: calc(100vh - 12rem - 2px);
-    }
+  .main-height {
+    height: calc(100vh - 3.25rem - 2px);
+  }
+  .home-section-height {
+    height: calc(100vh - 3.25rem - 1.5rem - 2px);
+  }
+  .recently-played-height {
+    height: calc(100vh - 12rem - 2px);
+  }
 }

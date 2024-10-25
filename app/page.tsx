@@ -7,15 +7,15 @@ import SpotifyWebApi from "spotify-web-api-node";
 import { signIn } from "next-auth/react";
 
 export default async function Home() {
-    const session = (await getServerSession(authOptions)) as Session;
-    if (session?.user && session?.accessToken) {
-        const spotifyApi = new SpotifyWebApi({
-            accessToken: session.accessToken,
-        });
-        if (session?.error) {
-            signIn("spotify");
-        }
-        return <HomeSection spotifyApi={spotifyApi} />;
+  const session = (await getServerSession(authOptions)) as Session;
+  if (session?.user && session?.accessToken) {
+    const spotifyApi = new SpotifyWebApi({
+      accessToken: session.accessToken,
+    });
+    if (session?.error) {
+      signIn("spotify");
     }
-    return <HeroSigninBlock />;
+    return <HomeSection spotifyApi={spotifyApi} />;
+  }
+  return <HeroSigninBlock />;
 }
