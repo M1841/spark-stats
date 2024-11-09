@@ -9,8 +9,6 @@ import {
   Info,
   Code2,
   Settings,
-  Moon,
-  Sun,
 } from "lucide-react";
 import Link from "next/link";
 import SignoutButton from "../scenes/signout-button";
@@ -41,25 +39,19 @@ export default function SideMenu(props: { className?: string }) {
               <Mic2 size={16} />
               Top Artists
             </Link>
-            <div className="text-neutral-400 dark:text-neutral-600 flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-default gap-2">
+            <Link
+              href="/shuffle"
+              className="flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-pointer gap-2"
+            >
               <Shuffle size={16} />
               Playlist Shuffler
-            </div>
-            <div className="text-neutral-400 dark:text-neutral-600 flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-default gap-2">
-              <CopyMinus size={16} />
-              Duplicate Remover
-            </div>
+              <span className="text-emerald-500 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-400/10 px-2 py-1 font-medium text-xs inline-flex items-center rounded-full h-fit">
+                New
+              </span>
+            </Link>
           </div>
           <div className="flex flex-col p-2 border-b border-zinc-500/25 gap-1">
-            <div className="text-neutral-400 dark:text-neutral-600 flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-default gap-2">
-              <Settings size={16} />
-              Settings
-            </div>
             <ThemeToggle />
-            <div className="text-neutral-400 dark:text-neutral-600 flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-default gap-2">
-              <Info size={16} />
-              About
-            </div>
             <Link
               href="https://github.com/M1841/spark-stats"
               className="flex justify-start items-center p-2 rounded-sm sm:hover:bg-neutral-200/75 sm:dark:hover:bg-neutral-900/75 cursor-pointer gap-2"

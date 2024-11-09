@@ -79,13 +79,6 @@ export default async function TopTracks(props: { spotifyApi: SpotifyWebApi }) {
 }
 
 export function LoadingTopTracks() {
-  let skeletonCards: JSX.Element[] = [];
-  for (let i = 1; i <= 19; i++)
-    skeletonCards.push(
-      <li>
-        <LoadingCard index={i} />
-      </li>
-    );
   return (
     <section className="flex flex-col">
       <header className="p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400">
@@ -96,7 +89,11 @@ export function LoadingTopTracks() {
           Top Tracks
         </h2>
       </header>
-      <ul className="flex flex-col gap-2">{skeletonCards}</ul>
+      <ul className="flex flex-col gap-2">
+        {[...Array(19)].map((_, i) => {
+          return <LoadingCard key={i} index={i + 1} />;
+        })}
+      </ul>
     </section>
   );
 }

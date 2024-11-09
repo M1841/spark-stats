@@ -1,5 +1,3 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { Session } from "next-auth";
 import SpotifyWebApi from "spotify-web-api-node";
 import { redirect } from "next/navigation";
@@ -8,9 +6,10 @@ import TopArtists, {
   LoadingTopArtists,
 } from "@/components/scenes/top-artists/top-artists";
 import { Suspense } from "react";
+import { auth } from "@/auth";
 
 export default async function StatsRedirect() {
-  const session = (await getServerSession(authOptions)) as Session;
+  const session = (await auth()) as Session;
   if (session?.user && session?.accessToken) {
     const spotifyApi = new SpotifyWebApi({
       accessToken: session.accessToken,

@@ -1,4 +1,4 @@
-import { LayoutGrid, Music2, Mic2 } from "lucide-react";
+import { LayoutGrid, Music2, Mic2, Shuffle } from "lucide-react";
 import Link from "next/link";
 
 export default function FeaturesSection() {
@@ -6,24 +6,20 @@ export default function FeaturesSection() {
     {
       key: "top_tracks",
       href: "/top-tracks",
-      icon: (
-        <Music2
-          className="rounded-sm text-emerald-500 dark:text-emerald-300 bg-emerald-400/10 dark:bg-emerald-400/10 p-3 flex-none w-12 h-12"
-          size={24}
-        />
-      ),
+      icon: Music2,
       text: "Your Top Tracks",
     },
     {
       key: "top_artists",
       href: "/top-artists",
-      icon: (
-        <Mic2
-          className="rounded-sm text-emerald-500 dark:text-emerald-300 bg-emerald-400/10 dark:bg-emerald-400/10 p-3 flex-none w-12 h-12"
-          size={24}
-        />
-      ),
+      icon: Mic2,
       text: "Your Top Artists",
+    },
+    {
+      key: "shuffle",
+      href: "/shuffle",
+      icon: Shuffle,
+      text: "Playlist Shuffler",
     },
   ];
   return (
@@ -42,9 +38,12 @@ export default function FeaturesSection() {
             <Link
               key={feature.key}
               href={feature.href}
-              className="w-full sm:w-1/2 rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-start items-center p-2 sm:hover:bg-neutral-100/75  sm:dark:hover:bg-neutral-900/75 gap-2 text-sm"
+              className="w-full sm:w-1/3 rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-start items-center p-2 sm:hover:bg-neutral-100/75  sm:dark:hover:bg-neutral-900/75 gap-2 text-sm"
             >
-              {feature.icon}
+              <feature.icon
+                className="rounded-sm text-emerald-500 dark:text-emerald-300 bg-emerald-400/10 dark:bg-emerald-400/10 p-3 flex-none w-12 h-12"
+                size={24}
+              />
               {feature.text}
             </Link>
           );

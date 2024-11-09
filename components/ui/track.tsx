@@ -12,12 +12,13 @@ const displayArtistsOrShow = (item: SpotifyApi.TrackObjectFull) => {
           className="hover:underline"
           href={item.artists[0].external_urls.spotify}
           target="_blank"
+          key={item.artists[0].id}
         >
           {item.artists[0].name}
         </Link>
       );
     } else {
-      return <>{item.artists[0].name}</>;
+      return <li key={item.artists[0].id}>{item.artists[0].name}</li>;
     }
 
   let index = 0;
@@ -87,9 +88,9 @@ export default function Track(props: {
             ) : (
               <p className="text-sm">{track?.name}</p>
             )}
-            <div className="text-[0.8rem] text-neutral-600 dark:text-neutral-400 w-fit">
+            <ul className="text-[0.8rem] text-neutral-600 dark:text-neutral-400 w-fit">
               {displayArtistsOrShow(track)}
-            </div>
+            </ul>
           </div>
         </div>
         {track?.external_urls.spotify &&

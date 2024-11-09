@@ -55,7 +55,7 @@ export function LoadingRecentlyPlayed() {
   let loadingCards: JSX.Element[] = [];
   for (let i = 0; i < 20; i++)
     loadingCards.push(
-      <li>
+      <li key={"loading" + i}>
         <LoadingCard />
       </li>
     );

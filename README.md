@@ -1,4 +1,4 @@
-# Spark Stats - version 0.6.2
+# Spark Stats - version 1.0.0
 
 ## Description
 
@@ -59,6 +59,15 @@ NEXTAUTH_SECRET=[ANY RANDOM STRING]
   ```
 
 ## Change Log
+
+### v1.0.0
+
+Type: Major
+
+Released: 2024-11-??
+
+- Added a playlist shuffler page
+- Migrated to Next.js 15 and Auth.js 5
 
 ### v0.6.2
 

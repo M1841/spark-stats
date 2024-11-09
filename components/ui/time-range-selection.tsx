@@ -60,26 +60,15 @@ export default function TimeRangeSelection() {
 
       <form className="flex w-full gap-2 lg:gap-6 mb-6">
         {ranges.map((range) => {
-          // const isCheckedByDefault = range.code === "short";
           return (
-            <>
-              {/* <input
-                                className="hidden"
-                                id={range.code + "-select"}
-                                type="radio"
-                                name="time-range"
-                                value={range.code + "-term"}
-                                defaultChecked={isCheckedByDefault}
-                            /> */}
-              <label
-                id={range.code + "-select-label"}
-                key={range.code}
-                htmlFor={range.code + "-select"}
-                className="text-center w-1/3 p-2 rounded-md text-sm cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75"
-              >
-                {range.name}
-              </label>
-            </>
+            <label
+              id={range.code + "-select-label"}
+              key={range.code}
+              htmlFor={range.code + "-select"}
+              className="text-center w-1/3 p-2 rounded-md text-sm cursor-pointer text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-300 bg-neutral-100/25 dark:bg-neutral-900/25 border-[1px] border-zinc-300 dark:border-zinc-800 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75"
+            >
+              {range.name}
+            </label>
           );
         })}
       </form>
