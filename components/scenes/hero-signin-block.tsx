@@ -20,7 +20,6 @@ export default function HeroSigninBlock() {
               width={512}
               height={512}
               priority
-              className="max-w-xl"
             />
           </TooltipTrigger>
           <TooltipContent className="bg-neutral-100/95 dark:bg-neutral-900/95 absolute w-max -left-24 top-[30rem]">

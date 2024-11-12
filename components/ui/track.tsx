@@ -18,7 +18,7 @@ const displayArtistsOrShow = (item: SpotifyApi.TrackObjectFull) => {
         </Link>
       );
     } else {
-      return <li key={item.artists[0].id}>{item.artists[0].name}</li>;
+      return item.artists[0].name;
     }
 
   let index = 0;
@@ -88,9 +88,9 @@ export default function Track(props: {
             ) : (
               <p className="text-sm">{track?.name}</p>
             )}
-            <ul className="text-[0.8rem] text-neutral-600 dark:text-neutral-400 w-fit">
+            <p className="text-[0.8rem] text-neutral-600 dark:text-neutral-400 w-fit">
               {displayArtistsOrShow(track)}
-            </ul>
+            </p>
           </div>
         </div>
         {track?.external_urls.spotify &&

@@ -1,4 +1,4 @@
-# Spark Stats - version 1.0.0
+# Spark Stats - version 1.0.1
 
 ## Description
 
@@ -60,13 +60,21 @@ NEXTAUTH_SECRET=[ANY RANDOM STRING]
 
 ## Change Log
 
+### v1.0.1
+
+Type: Patch
+
+Released: 2024-11-12
+
+- Fixed login graphic sizing and auth cookie name
+
 ### v1.0.0
 
 Type: Major
 
-Released: 2024-11-??
+Released: 2024-11-09
 
-- Added a playlist shuffler page
+- Added the playlist shuffler
 - Migrated to Next.js 15 and Auth.js 5
 
 ### v0.6.2
@@ -84,7 +92,7 @@ Released: 2024-10-25
 
 ### v0.6.1
 
-Type: Minor
+Type: Patch
 
 Released: 2023-09-24
 
