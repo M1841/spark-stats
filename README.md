@@ -1,4 +1,4 @@
-# Spark Stats - version 1.0.1
+# Spark Stats - version 1.0.2
 
 ## Description
 
@@ -59,6 +59,14 @@ NEXTAUTH_SECRET=[ANY RANDOM STRING]
   ```
 
 ## Change Log
+
+### v1.0.2
+
+Type: Patch
+
+Released: 2024-11-30
+
+- Added some `null` checks
 
 ### v1.0.1
 
