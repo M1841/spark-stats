@@ -12,18 +12,20 @@ export default function Playlists(props: {
 
   return (
     <ul className="flex flex-col gap-2">
-      {playlists.map((playlist) => {
-        return (
-          <li key={playlist.id}>
-            <Playlist
-              playlist={playlist}
-              onShuffle={async () => {
-                setPlaylists(await fetchPlaylists());
-              }}
-            />
-          </li>
-        );
-      })}
+      {playlists
+        .filter((playlist) => playlist !== null)
+        .map((playlist) => {
+          return (
+            <li key={playlist.id}>
+              <Playlist
+                playlist={playlist}
+                onShuffle={async () => {
+                  setPlaylists(await fetchPlaylists());
+                }}
+              />
+            </li>
+          );
+        })}
     </ul>
   );
 }

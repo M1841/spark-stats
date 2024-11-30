@@ -60,13 +60,15 @@ export default async function TopArtists(props: { spotifyApi: SpotifyWebApi }) {
               id={range + "_list"}
               key={range + "_list"}
             >
-              {artists.map((artist, index) => {
-                return (
-                  <li key={range + "_list_" + artist.id}>
-                    <Artist artist={artist} index={index + 1} />
-                  </li>
-                );
-              })}
+              {artists
+                .filter((artist) => artist !== null)
+                .map((artist, index) => {
+                  return (
+                    <li key={range + "_list_" + artist.id}>
+                      <Artist artist={artist} index={index + 1} />
+                    </li>
+                  );
+                })}
             </ul>
           );
         })}

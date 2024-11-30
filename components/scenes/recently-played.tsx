@@ -22,13 +22,15 @@ export default async function RecentlyPlayed(props: {
           </h2>
         </header>
         <ul className="flex flex-col gap-2 -mr-[0.786rem] pr-[0.786rem]">
-          {items.map((item) => {
-            return (
-              <li key={item.played_at}>
-                <Track item={item.track} />
-              </li>
-            );
-          })}
+          {items
+            .filter((item) => item !== null)
+            .map((item) => {
+              return (
+                <li key={item.played_at}>
+                  <Track item={item.track} />
+                </li>
+              );
+            })}
           {items.length < 1 && (
             <section className="rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2">
               <div className="flex justify-start items-center gap-2">

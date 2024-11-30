@@ -22,22 +22,24 @@ const displayArtistsOrShow = (item: SpotifyApi.TrackObjectFull) => {
     }
 
   let index = 0;
-  const result = item.artists.map((artist) => {
-    index++;
-    return (
-      <>
-        <Link
-          className="hover:underline"
-          href={artist.external_urls.spotify || ""}
-          target="_blank"
-          key={artist.id}
-        >
-          {artist.name}
-        </Link>
-        {index < artistCount - 1 ? ", " : index < artistCount ? " & " : ""}
-      </>
-    );
-  });
+  const result = item.artists
+    .filter((artist) => artist !== null)
+    .map((artist) => {
+      index++;
+      return (
+        <>
+          <Link
+            className="hover:underline"
+            href={artist.external_urls.spotify || ""}
+            target="_blank"
+            key={artist.id}
+          >
+            {artist.name}
+          </Link>
+          {index < artistCount - 1 ? ", " : index < artistCount ? " & " : ""}
+        </>
+      );
+    });
   return result;
 };
 

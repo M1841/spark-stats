@@ -9,6 +9,7 @@ export default async function PlaylistShuffler(props: {
   try {
     const { spotifyApi } = props;
     const playlists = (await spotifyApi.getUserPlaylists()).body.items;
+    console.log(playlists);
     return (
       <>
         <header className="p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400">
