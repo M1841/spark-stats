@@ -23,7 +23,7 @@ const displayArtistsOrShow = (item: SpotifyApi.TrackObjectFull) => {
 
   let index = 0;
   const result = item.artists
-    .filter((artist) => artist !== null)
+    .filter((artist) => artist)
     .map((artist) => {
       index++;
       return (
@@ -49,7 +49,9 @@ export default function Track(props: {
 }) {
   const { item: track, index } = props;
   if (track.type === "track") {
-    const image = track.album.images[2] ? track.album.images[2].url : "";
+    const image = track?.album?.images?.at(-1)
+      ? track?.album.images.at(-1)!.url
+      : "";
     return (
       <section className="rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75">
         <div className="flex justify-start items-center gap-2">

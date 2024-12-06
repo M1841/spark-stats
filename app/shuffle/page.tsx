@@ -1,5 +1,4 @@
 import { auth } from "@/auth";
-import { Session } from "next-auth";
 import { redirect } from "next/navigation";
 import SpotifyWebApi from "spotify-web-api-node";
 import { Suspense } from "react";
@@ -8,7 +7,7 @@ import PlaylistShuffler, {
 } from "@/components/scenes/shuffle/playlist-shuffler";
 
 export default async function Page() {
-  const session = (await auth()) as Session;
+  const session = await auth();
   if (session?.user && session?.accessToken) {
     const spotifyApi = new SpotifyWebApi({
       accessToken: session.accessToken,

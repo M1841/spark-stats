@@ -1,8 +1,8 @@
-# Spark Stats - version 1.0.2
+# Spark Stats - version 1.0.3
 
 ## Description
 
-One of those websites where you can see what tracks and artists you've listened to most over a certain predefined time range, mainly inspired by [volt.fm](https://volt.fm) but way more limited
+One of those websites where you can see what tracks and artists you've listened to most over a certain predefined time range, mainly inspired by [volt.fm](https://volt.fm) but way more limited for now
 
 ## Table of Contents
 
@@ -59,6 +59,12 @@ NEXTAUTH_SECRET=[ANY RANDOM STRING]
   ```
 
 ## Change Log
+
+### v1.0.3
+
+Type: Patch
+
+- Parallelized some more requests
 
 ### v1.0.2
 

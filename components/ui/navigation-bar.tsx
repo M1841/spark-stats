@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -8,10 +7,9 @@ import {
 } from "@/components/shadcn/navigation-menu";
 import SideMenu from "./side-menu";
 import { auth } from "@/auth";
-import { Session } from "next-auth";
 
 export default async function NavigationBar() {
-  const session = (await auth()) as Session;
+  const session = await auth();
   return (
     <NavigationMenu className="fixed w-full left-0 top-0 flex justify-center items-center border-b border-zinc-500/25 bg-zinc-100/75 py-2 backdrop-blur-sm dark:bg-neutral-900/75">
       <NavigationMenuList className="w-full">

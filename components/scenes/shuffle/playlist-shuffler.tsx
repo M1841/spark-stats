@@ -8,8 +8,19 @@ export default async function PlaylistShuffler(props: {
 }) {
   try {
     const { spotifyApi } = props;
-    const playlists = (await spotifyApi.getUserPlaylists()).body.items;
-    console.log(playlists);
+    const { total, limit, items } = (await spotifyApi.getUserPlaylists()).body;
+    const playlists = items.concat(
+      ...(await Promise.all(
+        [...Array(Math.ceil(total / limit))].map(
+          async (_, i) =>
+            (
+              await spotifyApi.getUserPlaylists({
+                offset: limit * (i + 1) + 1,
+              })
+            ).body.items
+        )
+      ))
+    );
     return (
       <>
         <header className="p-0 pl-2 mb-2 text-neutral-600 dark:text-neutral-400">

@@ -61,7 +61,7 @@ export default async function TopArtists(props: { spotifyApi: SpotifyWebApi }) {
               key={range + "_list"}
             >
               {artists
-                .filter((artist) => artist !== null)
+                .filter((artist) => artist)
                 .map((artist, index) => {
                   return (
                     <li key={range + "_list_" + artist.id}>

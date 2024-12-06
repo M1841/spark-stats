@@ -9,7 +9,7 @@ import { Button } from "../shadcn/button";
 
 export default function Playlist(props: {
   playlist: SpotifyApi.PlaylistObjectSimplified;
-  onShuffle: () => void;
+  onShuffle: () => Promise<void>;
 }) {
   const [loading, setLoading] = useState(false);
   const { playlist, onShuffle } = props;
@@ -59,7 +59,7 @@ export default function Playlist(props: {
         onClick={async () => {
           setLoading(true);
           await shufflePlaylist(playlist);
-          onShuffle();
+          await onShuffle();
           setLoading(false);
         }}
         className="rounded-full text-emerald-500 dark:text-emerald-300 bg-emerald-400/10 dark:bg-emerald-400/10  sm:hover:bg-emerald-400/25  sm:dark:hover:bg-emerald-400/25 p-3 flex-none"

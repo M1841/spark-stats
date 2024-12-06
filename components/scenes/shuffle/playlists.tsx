@@ -13,7 +13,7 @@ export default function Playlists(props: {
   return (
     <ul className="flex flex-col gap-2">
       {playlists
-        .filter((playlist) => playlist !== null)
+        .filter((playlist) => playlist)
         .map((playlist) => {
           return (
             <li key={playlist.id}>

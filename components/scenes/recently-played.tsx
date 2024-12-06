@@ -23,7 +23,7 @@ export default async function RecentlyPlayed(props: {
         </header>
         <ul className="flex flex-col gap-2 -mr-[0.786rem] pr-[0.786rem]">
           {items
-            .filter((item) => item !== null)
+            .filter((item) => item)
             .map((item) => {
               return (
                 <li key={item.played_at}>

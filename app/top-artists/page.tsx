@@ -1,4 +1,3 @@
-import { Session } from "next-auth";
 import SpotifyWebApi from "spotify-web-api-node";
 import { redirect } from "next/navigation";
 import TimeRangeSelection from "@/components/ui/time-range-selection";
@@ -8,8 +7,8 @@ import TopArtists, {
 import { Suspense } from "react";
 import { auth } from "@/auth";
 
-export default async function StatsRedirect() {
-  const session = (await auth()) as Session;
+export default async function Page() {
+  const session = await auth();
   if (session?.user && session?.accessToken) {
     const spotifyApi = new SpotifyWebApi({
       accessToken: session.accessToken,

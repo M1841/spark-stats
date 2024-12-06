@@ -41,15 +41,14 @@ const authOptions = {
       if (token.expiresAt) {
         let expiresAt = token.expiresAt as number;
         const now = Date.now() / 1000;
-        const fiveMinutes = 5 * 60;
-        if (expiresAt - now < fiveMinutes) {
+        if (expiresAt <= now) {
           const accessToken = token.accessToken as string;
           const refreshToken = token.refreshToken as string;
           const spotifyApi = new SpotifyWebApi({
             accessToken,
             refreshToken,
-            clientId: process.env.SPOTIFY_CLIENT_ID,
-            clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+            clientId: process.env.AUTH_SPOTIFY_ID,
+            clientSecret: process.env.AUTH_SPOTIFY_SECRET,
           });
           const { body } = await spotifyApi.refreshAccessToken();
           token.expiresAt = Math.floor(body.expires_in + Date.now() / 1000);

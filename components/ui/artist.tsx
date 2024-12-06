@@ -35,7 +35,7 @@ export default function Artist(props: {
   index?: number;
 }) {
   const { artist, index } = props;
-  const image = artist.images[2].url;
+  const image = artist?.images?.at(-1) ? artist.images.at(-1)!.url : "";
   return (
     <section className="rounded-lg bg-neutral-100/25 dark:bg-neutral-900/25 w-full border-[1px] border-zinc-300 dark:border-zinc-800 flex justify-between items-center p-2 sm:hover:bg-neutral-100/75 sm:dark:hover:bg-neutral-900/75">
       <div className="flex justify-start items-center gap-2">
